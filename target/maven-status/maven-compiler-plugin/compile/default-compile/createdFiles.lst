@@ -1,0 +1,3 @@
+com\example\remoting\MessageClient.class
+com\example\remoting\MessageProtocol.class
+com\example\remoting\MessageServer.class
