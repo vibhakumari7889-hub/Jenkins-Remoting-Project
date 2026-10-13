@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenkins Remoting Project</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #263238;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #dce2e8;
+            padding: 16px 8%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav strong {
+            font-size: 18px;
+        }
+
+        nav a {
+            color: #37474f;
+            text-decoration: none;
+            margin-left: 18px;
+        }
+
+        nav a:hover {
+            color: #1565c0;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 22px;
+        }
+
+        .intro {
+            background: white;
+            padding: 32px;
+            border: 1px solid #dce2e8;
+            border-radius: 8px;
+        }
+
+        .intro small {
+            color: #1565c0;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 34px;
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .muted {
+            color: #596a75;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 16px;
+            background: #1565c0;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        section {
+            margin-top: 28px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #dce2e8;
+            border-radius: 7px;
+            padding: 20px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .tech span {
+            background: #e8eef5;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .flow {
+            background: #edf3f8;
+            padding: 14px;
+            border-radius: 5px;
+            text-align: center;
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            margin-top: 25px;
+            background: white;
+            border-top: 1px solid #dce2e8;
+            color: #596a75;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 16px 5%;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 12px;
+            }
+
+            main {
+                padding: 25px 15px;
+            }
+
+            .intro {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <strong>Jenkins Remoting Project</strong>
+            <div>
+                <a href="#about">About</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#technology">Technology</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro">
+            <small>JAVA · CLIENT-SERVER · CI/CD</small>
+            <h1>Jenkins Remoting Project</h1>
+            <p class="muted">
+                A small Java project that demonstrates TCP socket
+                communication between a client and a server. It also
+                uses Maven and Jenkins to build and test the application.
+            </p>
+
+            <a class="button"
+               href="https://github.com/vibhakumari7889-hub/Jenkins-Remoting-Project"
+               target="_blank"
+               rel="noopener noreferrer">
+                View Source Code
+            </a>
+        </div>
+
+        <section id="about">
+            <h2>About the Project</h2>
+            <p class="muted">
+                The client sends a text message to the server using a TCP
+                connection. The server reads the message and sends a
+                response back. The project also includes unit tests for
+                message encoding and decoding.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Message Client</h3>
+                    <p class="muted">
+                        Connects to the server and sends a text message
+                        through a socket.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Message Server</h3>
+                    <p class="muted">
+                        Listens for client connections and returns a
+                        response after receiving a message.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Message Protocol</h3>
+                    <p class="muted">
+                        Converts messages to and from UTF-8 byte data.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture">
+            <h2>Project Architecture</h2>
+            <div class="card">
+                <p class="flow">MessageClient → TCP Socket → MessageServer</p>
+                <p class="flow">MessageServer → Response → MessageClient</p>
+                <p class="muted">
+                    The client and server communicate using TCP sockets
+                    on port 5000 in the current local implementation.
+                </p>
+            </div>
+        </section>
+
+        <section id="technology">
+            <h2>Tools and Technologies</h2>
+            <div class="card">
+                <div class="tech">
+                    <span>Java 21</span>
+                    <span>Maven</span>
+                    <span>JUnit 5</span>
+                    <span>Jenkins</span>
+                    <span>Git</span>
+                    <span>GitHub</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+                <p class="muted">
+                    Jenkins checks out the source code from GitHub and
+                    runs the Maven build and test process.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Continuous Integration</h2>
+            <div class="card">
+                <p class="flow">
+                    Code Push → GitHub → Webhook → Jenkins → Maven Tests
+                </p>
+                <p class="muted">
+                    The pipeline helps check that the project builds
+                    and its automated tests run after code changes.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Jenkins Remoting Project · Java TCP Client-Server
+    </footer>
+</body>
+</html>
